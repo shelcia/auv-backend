@@ -10,9 +10,9 @@ const PORT = process.env.PORT || 4050;
 dotenv.config();
 
 //MIDDLEWARE
-app.use(bodyParser.urlencoded({ extended: true }), cors());
-app.use(bodyParser.json(), cors());
-// app.use(express.json(), cors());
+// app.use(bodyParser.urlencoded({ extended: true }), cors());
+// app.use(bodyParser.json(), cors());
+app.use(express.json(), cors());
 app.use(express.static(path.join(__dirname, "public")), cors());
 
 app.post("/sendemail", (req, res, next) => {
