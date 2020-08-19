@@ -17,7 +17,9 @@ app.use(express.static(path.join(__dirname, "public")), cors());
 app.post("/sendemail", (req, res, next) => {
   console.log(req.body);
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    // service: "gmail",
+    host: "smtp.ethereal.email",
+    port: 587,
     auth: {
       user: process.env.EMAIL,
       pass: process.env.PASSWORD,
